@@ -27,9 +27,8 @@ class boilerplate_module extends CModule
 
     /**
      * Module contains this components
-     * @return array
      */
-    public static function getComponentNames()
+    public static function getComponentNames(): array
     {
         return [
             'boilerplate.component',
@@ -62,13 +61,10 @@ class boilerplate_module extends CModule
         /**
          * Install Database
          */
-        $DB->RunSQLBatch(__DIR__ . '/install/db/install.sql');
 
         /**
          * Install Events
          */
-        $eventManager = \Bitrix\Main\EventManager::getInstance();
-        $eventManager->registerEventHandler('main', 'OnPageStart', $this->MODULE_ID, Event::class, 'example');
 
         /**
          * Install Files
@@ -94,13 +90,10 @@ class boilerplate_module extends CModule
         /**
          * Uninstall Database
          */
-        $DB->RunSQLBatch(__DIR__ . '/install/db/uninstall.sql');
 
         /**
          * Uninstall Events
          */
-        $eventManager = \Bitrix\Main\EventManager::getInstance();
-        $eventManager->unRegisterEventHandler('main', 'OnPageStart', $this->MODULE_ID);
 
         /**
          * Uninstall Files
