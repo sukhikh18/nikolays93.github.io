@@ -3,8 +3,6 @@
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\ModuleManager;
 
-use Boilerplate\Module\Event;
-
 IncludeModuleLangFile(__FILE__);
 
 if (class_exists('boilerplate_module')) {
